@@ -1,12 +1,20 @@
 // JavaScript source code
 import { StyleSheet, Text, View, Image} from 'react-native';
-import React, { useState } from "react";
-import Colors from "../Themes/colors"
+import React, { useState } from 'react';
+import Colors from '../Themes/colors';
+import { AntDesign } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Song({index, cover, title, artist, album, duration}) {
+export default function Song({index, cover, title, artist, album, duration, detsong_link, songprev_link}) {
+    const navigation = useNavigation();
 	return (
-        <View style={styles.song}>
-            <Text style={styles.index}>{index}</Text>
+        <Pressable style={styles.song} onPress={()=>navigation.navigate('Detailed Song Screen', {'detsong_link': detsong_link})}>
+            <Pressable style={styles.index} onPress={(e) => {
+                e.stopPropagation();
+                navigation.navigate("Song Preview Screen", {'songprev_link': songprev_link})
+            }}>
+                <AntDesign name="play" size={24} style={styles.icon} />
+            </Pressable>
             <Image style={styles.cover} source={image}/>
             <View style={styles.titlesWrap}>
                 <Text numberOfLines={1} style={styles.text}>{title}</Text>
@@ -18,7 +26,7 @@ export default function Song({index, cover, title, artist, album, duration}) {
             <View style={styles.duration}>
                 <Text numberOfLines={1} style={styles.text}>{duration}</Text>
             </View>
-        </View>
+        </Pressable>
 	);
 }
 
@@ -61,5 +69,8 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         margin: 5,
         width: "25%"
+    },
+    icon: {
+        color: Colors.spotify, 
     }
 });
