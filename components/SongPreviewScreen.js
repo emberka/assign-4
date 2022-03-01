@@ -1,6 +1,7 @@
 // JavaScript source code
 import { WebView } from 'react-native-webview';
-import Colors from './Themes/colors';
+import { StyleSheet } from 'react-native';
+import Colors from '../Themes/colors';
 
 export default function SongPreviewScreen({ navigation, route}) {
     const songprev_link = route.params;

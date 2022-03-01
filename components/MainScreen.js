@@ -2,11 +2,11 @@
 import { View, Image, StyleSheet, Text, SafeAreaView, FlatList, Pressable } from 'react-native';
 import { useState, useEffect } from 'react';
 import { ResponseType, useAuthRequest } from 'expo-auth-session';
-import { myTopTracks, albumTracks } from './utils/apiOptions';
-import { REDIRECT_URI, SCOPES, CLIENT_ID, ALBUM_ID } from "./utils/constants";
-import Colors from './Themes/colors';
-import millisToMinutesAndSeconds from './utils/millisToMinuteSeconds';
-import Song from './components/Song.js';
+import { myTopTracks, albumTracks } from '../utils/apiOptions';
+import { REDIRECT_URI, SCOPES, CLIENT_ID, ALBUM_ID } from "../utils/constants";
+import Colors from '../Themes/colors';
+import millisToMinutesAndSeconds from '../utils/millisToMinuteSeconds';
+import Song from './Song.js';
 
 // Endpoints for authorizing with Spotify
 const discovery = {
@@ -64,7 +64,7 @@ export default function MainScreen({navigation}) {
             styles.authButton
             ]}>       
             <View style={styles.authButton}>
-                <Image style={styles.icon} source={require('./assets/spotify-logo.png')}/>
+                <Image style={styles.icon} source={require('../assets/spotify-logo.png')}/>
                 <Text style={styles.text}> CONNECT WITH SPOTIFY </Text>
             </View>  
         </Pressable>
@@ -74,7 +74,7 @@ export default function MainScreen({navigation}) {
     return(
         <View>
             <View style={styles.topBar}>
-                <Image style={styles.biggerIcon} source={require('./assets/spotify-logo.png')} />
+                <Image style={styles.biggerIcon} source={require('../assets/spotify-logo.png')} />
                 <Text style={styles.topText}>My Top Tracks</Text>
             </View>
             <FlatList
