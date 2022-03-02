@@ -1,5 +1,5 @@
 // JavaScript source code
-import { View, Image, StyleSheet, Text, SafeAreaView, FlatList, Pressable } from 'react-native';
+import { View, Image, StyleSheet, Text, SafeAreaView, FlatList, Pressable} from 'react-native';
 import { useState, useEffect } from 'react';
 import { ResponseType, useAuthRequest } from 'expo-auth-session';
 import { myTopTracks, albumTracks } from '../utils/apiOptions';
