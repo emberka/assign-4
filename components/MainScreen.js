@@ -93,6 +93,8 @@ export default function MainScreen({navigation}) {
         artist={item.artists[0].name}
         album={item.album.name}
         duration={millisToMinutesAndSeconds(item.duration_ms)}
+        detsong_link={item.external_urls.spotify}
+        songprev_link={item.preview_url}
     />
   );
 

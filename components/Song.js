@@ -15,7 +15,7 @@ export default function Song({index, cover, title, artist, album, duration, dets
             }}>
                 <AntDesign name="play" size={24} style={styles.icon} />
             </Pressable>
-            <Image style={styles.cover} source={image}/>
+            <Image style={styles.cover} source={{uri: cover}}/>
             <View style={styles.titlesWrap}>
                 <Text numberOfLines={1} style={styles.text}>{title}</Text>
                 <Text numberOfLines={1} style={styles.subText}>{artist}</Text>
